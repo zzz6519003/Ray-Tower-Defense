@@ -20,6 +20,16 @@
     int wave;
     CCLabelBMFont *ui_wave_lbl;
 
+    
+    int playerHp;
+    CCLabelBMFont *ui_hp_lbl;
+    BOOL gameEnded;
+    
+    
+    int playerGold;
+    CCLabelBMFont *ui_gold_lbl;
+
+
 }
 
 @property (nonatomic,strong) NSMutableArray *towers;
@@ -38,5 +48,11 @@ collisionWithCircle:(CGPoint)circlePointTwo collisionCircleRadius:(float)radiusT
 void ccFillPoly(CGPoint *poli, int points, BOOL closePolygon);
 -(void) enemyGotKilled;
 -(void) getHpDamage;
+
+
+-(void)doGameOver;
+
+-(void)awardGold:(int)gold;
+
 
 @end

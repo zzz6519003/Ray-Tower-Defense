@@ -61,8 +61,11 @@
     waypoint6.nextWaypoint =waypoint5;
 }
 
-- (BOOL)canBuyTower {
-    return YES;
+//Replace canBuyTower method with the following:
+-(BOOL)canBuyTower {
+    if (playerGold - kTOWER_COST >=0)
+        return YES;
+    return NO;
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -133,13 +136,55 @@
         // 6 - create wave label
         
         // 7 - player lives
+        playerHp = 5;
+        ui_hp_lbl = [CCLabelBMFont labelWithString:[NSString stringWithFormat:@"HP: %d",playerHp]
+                                           fntFile:@"font_red_14.fnt"];
+        [self addChild:ui_hp_lbl z:10];
+        [ui_hp_lbl setPosition:ccp(35,winSize.height-12)];
         
         // 8 - gold
+        
+        // Add at the end of init:
+        // 8 - Gold
+        playerGold = 1000;
+        ui_gold_lbl = [CCLabelBMFont labelWithString:[NSString stringWithFormat:@"GOLD: %d",playerGold]
+                                             fntFile:@"font_red_14.fnt"];
+        [self addChild:ui_gold_lbl z:10];
+        [ui_gold_lbl setPosition:ccp(135,winSize.height-12)];
+        [ui_gold_lbl setAnchorPoint:ccp(0,0.5)];
+
         
         // 9 - sound
 	}
 	return self;
 }
+
+
+// Add the following methods
+-(void)getHpDamage {
+    playerHp--;
+    [ui_hp_lbl setString:[NSString stringWithFormat:@"HP: %d",playerHp]];
+    if (playerHp <=0) {
+        [self doGameOver];
+    }
+}
+
+-(void)doGameOver {
+    if (!gameEnded) {
+        gameEnded = YES;
+        [[CCDirector sharedDirector]
+         replaceScene:[CCTransitionRotoZoom transitionWithDuration:1
+                                                             scene:[HelloWorldLayer scene]]];
+    }
+}
+
+//Add the following method
+-(void)awardGold:(int)gold {
+    playerGold += gold;
+    [ui_gold_lbl setString:[NSString stringWithFormat:@"GOLD: %d",playerGold]];
+}
+
+
 
 - (void)loadTowerPosition {
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"TowersPosition" ofType:@"plist"];
