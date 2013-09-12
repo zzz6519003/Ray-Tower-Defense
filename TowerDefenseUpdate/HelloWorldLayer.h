@@ -30,6 +30,7 @@
     CCLabelBMFont *ui_gold_lbl;
 
 
+    
 }
 
 @property (nonatomic,strong) NSMutableArray *towers;
