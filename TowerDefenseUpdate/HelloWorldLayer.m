@@ -12,6 +12,7 @@
 #import "Tower.h"
 #import "Waypoint.h"
 #import "Enemy.h"
+#import "LiuXiang.h"
 #import "SimpleAudioEngine.h"
 
 // Needed to obtain the Navigation Controller
@@ -70,6 +71,8 @@
         enemies = [[NSMutableArray alloc] init];
         [self loadWave];
         
+        [self addLiuXiang];
+        
         // 6 - create wave label
         ui_wave_lbl = [CCLabelBMFont labelWithString:[NSString stringWithFormat:@"WAVE: %d",wave] fntFile:@"font_red.fnt"];
         [self addChild:ui_wave_lbl z:10];
@@ -90,7 +93,7 @@
         [ui_gold_lbl setAnchorPoint:ccp(0,0.5)];
         
         // 9 - sound
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"8bitDungeonLevel.mp3" loop:YES];
+//        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"8bitDungeonLevel.mp3" loop:YES];
 	}
 	return self;
 }
@@ -163,6 +166,11 @@
     
 }
 
+- (void)addLiuXiang {
+    LiuXiang *l = [LiuXiang nodeWithTheGame:self];
+    [enemies addObject:l];
+    [l doActivate];
+}
 -(void)enemyGotKilled {
     if ([enemies count]<=0) //If there are no more enemies.
     {
