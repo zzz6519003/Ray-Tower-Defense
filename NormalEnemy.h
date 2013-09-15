@@ -3,7 +3,7 @@
 
 @class HelloWorldLayer, Waypoint, Tower;
 
-@interface Enemy: CCNode {
+@interface NormalEnemy: CCNode {
     CGPoint myPosition;
     int maxHp;
     int currentHp;

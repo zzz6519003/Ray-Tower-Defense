@@ -1,4 +1,4 @@
-#import "Enemy.h"
+#import "NormalEnemy.h"
 #import "Tower.h"
 #import "Waypoint.h"
 #import "SimpleAudioEngine.h"
@@ -6,7 +6,7 @@
 #define HEALTH_BAR_WIDTH 20
 #define HEALTH_BAR_ORIGIN -10
 
-@implementation Enemy
+@implementation NormalEnemy
 
 @synthesize mySprite, theGame;
 

@@ -12,7 +12,7 @@
 
 #define kTOWER_COST 300
 
-@class HelloWorldLayer, Enemy;
+@class HelloWorldLayer, NormalEnemy;
 
 @interface Tower : CCNode {
     int attackRange;
@@ -21,7 +21,7 @@
     
     // Add some instance variables
     BOOL attacking;
-    Enemy *chosenEnemy;
+    NormalEnemy *chosenEnemy;
     
 }
 

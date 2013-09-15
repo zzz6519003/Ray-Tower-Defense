@@ -11,7 +11,7 @@
 #import "HelloWorldLayer.h"
 #import "Tower.h"
 #import "Waypoint.h"
-#import "Enemy.h"
+#import "NormalEnemy.h"
 #import "LiuXiang.h"
 #import "SimpleAudioEngine.h"
 
@@ -154,7 +154,7 @@
     
     for(NSDictionary * enemyData in currentWaveData)
     {
-        Enemy * enemy = [Enemy nodeWithTheGame:self];
+        NormalEnemy * enemy = [NormalEnemy nodeWithTheGame:self];
         [enemies addObject:enemy];
         [enemy schedule:@selector(doActivate) interval:[[enemyData objectForKey:@"spawnTime"]floatValue]];
     }
@@ -211,6 +211,14 @@
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    CCMenuItemImage *menuItem1 = [CCMenuItemImage itemFromNormalImage:@"menu.png" selectedImage:@"menu1.png"
+                                                               target:self selector:@selector(onClick:)];
+    
+    CCMenu *menu = [CCMenu menuWithItems:menuItem1,nil];
+    menu.position = ccp(320,480);
+    
+    [self addChild:menu z:100];
+
     
 	for( UITouch *touch in touches ) {
 		CGPoint location = [touch locationInView: [touch view]];

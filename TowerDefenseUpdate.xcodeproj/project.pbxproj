@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1839652B17900431009087C8 /* Waypoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1839652A17900431009087C8 /* Waypoint.m */; };
-		1874AD9617943DC600458A95 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1874AD9517943DC600458A95 /* Enemy.m */; };
+		1874AD9617943DC600458A95 /* NormalEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1874AD9517943DC600458A95 /* NormalEnemy.m */; };
 		18ADCC6D178D666500D064DD /* Tower.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ADCC6C178D666500D064DD /* Tower.m */; };
 		18E93F8717E5EBD700D75155 /* LiuXiang.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E93F8617E5EBD700D75155 /* LiuXiang.m */; };
 		D34464491712363800255FA3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D34464481712363800255FA3 /* QuartzCore.framework */; };
@@ -174,8 +174,8 @@
 /* Begin PBXFileReference section */
 		1839652917900431009087C8 /* Waypoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Waypoint.h; path = TowerDefenseUpdate/Waypoint.h; sourceTree = "<group>"; };
 		1839652A17900431009087C8 /* Waypoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Waypoint.m; path = TowerDefenseUpdate/Waypoint.m; sourceTree = "<group>"; };
-		1874AD9417943DC600458A95 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
-		1874AD9517943DC600458A95 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
+		1874AD9417943DC600458A95 /* NormalEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalEnemy.h; sourceTree = "<group>"; };
+		1874AD9517943DC600458A95 /* NormalEnemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalEnemy.m; sourceTree = "<group>"; };
 		18ADCC6B178D666500D064DD /* Tower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tower.h; sourceTree = "<group>"; };
 		18ADCC6C178D666500D064DD /* Tower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tower.m; sourceTree = "<group>"; };
 		18E93F8517E5EBD700D75155 /* LiuXiang.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiuXiang.h; path = TowerDefenseUpdate/LiuXiang.h; sourceTree = "<group>"; };
@@ -509,8 +509,8 @@
 		18E93F8417E5EBB800D75155 /* Enemy */ = {
 			isa = PBXGroup;
 			children = (
-				1874AD9417943DC600458A95 /* Enemy.h */,
-				1874AD9517943DC600458A95 /* Enemy.m */,
+				1874AD9417943DC600458A95 /* NormalEnemy.h */,
+				1874AD9517943DC600458A95 /* NormalEnemy.m */,
 				18E93F8517E5EBD700D75155 /* LiuXiang.h */,
 				18E93F8617E5EBD700D75155 /* LiuXiang.m */,
 			);
@@ -1188,7 +1188,7 @@
 				D34465F01712363A00255FA3 /* IntroLayer.m in Sources */,
 				18ADCC6D178D666500D064DD /* Tower.m in Sources */,
 				1839652B17900431009087C8 /* Waypoint.m in Sources */,
-				1874AD9617943DC600458A95 /* Enemy.m in Sources */,
+				1874AD9617943DC600458A95 /* NormalEnemy.m in Sources */,
 				18E93F8717E5EBD700D75155 /* LiuXiang.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

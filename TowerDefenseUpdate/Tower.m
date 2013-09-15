@@ -1,5 +1,5 @@
 #import "Tower.h"
-#import "Enemy.h"
+#import "NormalEnemy.h"
 
 @implementation Tower
 
@@ -45,7 +45,7 @@
             [self lostSightOfEnemy];
         }
     } else {
-        for(Enemy * enemy in theGame.enemies)
+        for(NormalEnemy * enemy in theGame.enemies)
         {
             if([theGame circle:mySprite.position withRadius:attackRange collisionWithCircle:enemy.mySprite.position collisionCircleRadius:1])
             {
@@ -68,7 +68,7 @@
     [self schedule:@selector(shootWeapon) interval:fireRate];
 }
 
--(void)chosenEnemyForAttack:(Enemy *)enemy
+-(void)chosenEnemyForAttack:(NormalEnemy *)enemy
 {
     chosenEnemy = nil;
     chosenEnemy = enemy;
